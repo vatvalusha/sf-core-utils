@@ -1,4 +1,3 @@
-[![Deploy](https://githubsfdeploy.herokuapp.com/assets/deploy.png)](https://github.com/vatvalusha/sf-core-utils)
 
 # DML Result Strategy Library
 
