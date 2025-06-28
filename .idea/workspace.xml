@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="375c0f9a-f539-42e2-b5f5-d9dbec7839ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/DmlResultServiceTest.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/Constants.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/Constants.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/DeleteResultStrategy.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/DeleteResultStrategy.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/DmlError.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/DmlError.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/DmlResult.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/DmlResult.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/DmlResultService.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/DmlResultService.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/IDmlResultStrategy.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/IDmlResultStrategy.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/SaveResultStrategy.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/SaveResultStrategy.cls-meta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/UpsertResultStrategy.cls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Utilities/DMLResultStrategy/UpsertResultStrategy.cls-meta.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/DmlResultService.cls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/DmlResultService.cls-meta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DmlResultServiceTest.cls-meta.xml" afterDir="false" />
-    </list>
+    <list default="true" id="375c0f9a-f539-42e2-b5f5-d9dbec7839ba" name="Default Changelist" comment="Refactor: Replace DmlResultService with IDmlResultStrategy interface and DeleteResultStrategy implementation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -248,6 +227,7 @@
     "Apex Unit Tests.VAL1.DmlResultServiceTest.testGetGenericErrorResults_EmptyInput.executor": "Coverage",
     "Apex Unit Tests.VAL1.DmlResultServiceTest.testGetGenericErrorResults_SaveResult.executor": "Coverage",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "utilities/dml-result-service",
     "node.js.detected.package.eslint": "true",
@@ -261,6 +241,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/classes/Tests" />
       <recent name="$PROJECT_DIR$/src/classes/Utilities" />
       <recent name="$PROJECT_DIR$/src/classes/Utilities/DMPResultStrategy" />
     </key>
@@ -775,12 +756,26 @@
       <workItem from="1705806987342" duration="612000" />
       <workItem from="1706030571995" duration="52000" />
       <workItem from="1740584180379" duration="1692000" />
-      <workItem from="1751121269619" duration="7042000" />
+      <workItem from="1751121269619" duration="7749000" />
     </task>
+    <task id="LOCAL-00001" summary="Refactor: Replace DmlResultService with IDmlResultStrategy interface and DeleteResultStrategy implementation">
+      <option name="closed" value="true" />
+      <created>1751138318352</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751138318352</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactor: Replace `DmlResultService` with `IDmlResultStrategy` for standardized DML result processing" />
+    <MESSAGE value="Refactor: Replace DmlResultService with IDmlResultStrategy interface and DeleteResultStrategy implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Replace DmlResultService with IDmlResultStrategy interface and DeleteResultStrategy implementation" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Valerii_Dev_Org$VAL1_DmlResultServiceTest.ic2" NAME="valerii_prod Coverage Results" MODIFIED="1751128009352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" PROJECT_NAME="Valerii_Dev_Org" CONNECTION_NAME="valerii_prod" CONNECTION_TYPE="OAUTH" />

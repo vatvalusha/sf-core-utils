@@ -8,3 +8,4 @@ node_modules/
 /.illuminatedCloud/
 **/tsconfig*.json
 **/*.tsbuildinfo
+*/workspace.xml
