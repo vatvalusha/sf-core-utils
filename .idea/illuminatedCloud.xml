@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="IlluminatedCloudSettings">
+    <option name="connections">
+      <list>
+        <IlluminatedCloudConnection>
+          <option name="connectionName" value="valerii_prod" />
+          <option name="connectionType" value="OAUTH" />
+          <option name="defaultModuleName" value="Valerii_Dev_Org" />
+          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/valerii_prod/OfflineSymbolTable.zip" />
+        </IlluminatedCloudConnection>
+      </list>
+    </option>
+  </component>
+</project>

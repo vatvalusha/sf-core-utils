@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="375c0f9a-f539-42e2-b5f5-d9dbec7839ba" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Lightning Web Component Shared JavaScript" />
+        <option value="JavaScript File" />
+        <option value="Lightning Web Component HTML" />
+        <option value="Lightning Web Component JavaScript" />
+        <option value="Apex Class" />
+        <option value="Apex Metadata" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/vatvalusha/sf-core-utils.git",
+    "accountId": "c3beba8d-2e8d-4b7b-bf0b-7fc653492df7"
+  }
+}]]></component>
+  <component name="IlluminatedCloudWorkspaceSettings">
+    <option name="moduleWorkspaceSettings">
+      <map>
+        <entry key="Valerii_Dev_Org">
+          <value>
+            <ModuleWorkspaceSettings>
+              <option name="moduleContentsLastModified" value="1596613739191" />
+            </ModuleWorkspaceSettings>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectWorkspaceSettings">
+      <ProjectWorkspaceSettings>
+        <option name="anonymousApexSettings">
+          <AnonymousApexSettings>
+            <option name="savedDocuments">
+              <list>
+                <AnonymousApexSavedDocument>
+                  <option name="apexLogLevel" value="FINEST" />
+                  <option name="name" value="Anonymous Apex 1" />
+                </AnonymousApexSavedDocument>
+              </list>
+            </option>
+          </AnonymousApexSettings>
+        </option>
+        <option name="connectionWorkspaceSettings">
+          <map>
+            <entry key="Engage RD 4 Misha Dev">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
+            <entry key="LWC Superbadge">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
+            <entry key="Vaillant QA2">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
+            <entry key="Valerii Dev Org">
+              <value>
+                <ConnectionWorkspaceSettings>
+                  <option name="buildSuccessDatesBySourceRootRelativePath">
+                    <map>
+                      <entry key="APEXCLASS:ACCOUNTPROCESSORTEST" value="1592830573429" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:HELLOWORLD" value="1596613875000" />
+                    </map>
+                  </option>
+                  <option name="lastBuildScope" value="CONTEXT" />
+                  <option name="lastBuildViewToggles">
+                    <map>
+                      <entry key="RETRIEVE">
+                        <value>
+                          <BuildViewToggles>
+                            <option name="showLocalAndServer" value="false" />
+                            <option name="showLocalOnly" value="false" />
+                            <option name="showServerOnly" value="true" />
+                            <option name="showSubscribedByParent" value="true" />
+                            <option name="showSubscribedOnly" value="true" />
+                          </BuildViewToggles>
+                        </value>
+                      </entry>
+                    </map>
+                  </option>
+                </ConnectionWorkspaceSettings>
+              </value>
+            </entry>
+            <entry key="Valerii LWC PlayGround">
+              <value>
+                <ConnectionWorkspaceSettings>
+                  <option name="buildSuccessDatesBySourceRootRelativePath">
+                    <map>
+                      <entry key="APEXCLASS:CONTACTCONTROLLER" value="1596620802000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:ACCOUNTTITLE" value="1596620682000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CONTACTCREATOR" value="1596618909000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:CONTACTLIST" value="1596620803000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:HELLOWORLD" value="1596617656000" />
+                      <entry key="LIGHTNINGCOMPONENTBUNDLE:LDSUTILS" value="1596620696000" />
+                    </map>
+                  </option>
+                  <option name="lastBuildScope" value="CONTEXT" />
+                  <option name="lastBuildViewToggles">
+                    <map>
+                      <entry key="DEPLOY">
+                        <value>
+                          <BuildViewToggles>
+                            <option name="showLocalAndServer" value="true" />
+                            <option name="showLocalOnly" value="true" />
+                            <option name="showServerOnly" value="false" />
+                            <option name="showSubscribedByParent" value="true" />
+                            <option name="showSubscribedOnly" value="true" />
+                          </BuildViewToggles>
+                        </value>
+                      </entry>
+                    </map>
+                  </option>
+                  <option name="lastDeploymentOptions">
+                    <DeploymentOptions />
+                  </option>
+                </ConnectionWorkspaceSettings>
+              </value>
+            </entry>
+            <entry key="engage_rd4_misha">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
+            <entry key="iHome Prod">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
+            <entry key="valerii_prod">
+              <value>
+                <ConnectionWorkspaceSettings>
+                  <option name="buildSuccessDatesBySourceRootRelativePath">
+                    <map>
+                      <entry key="APEXCLASS:DMLRESULTSERVICE" value="1751121643000" />
+                    </map>
+                  </option>
+                </ConnectionWorkspaceSettings>
+              </value>
+            </entry>
+            <entry key="vasil_rd2">
+              <value>
+                <ConnectionWorkspaceSettings />
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="retrieveAndMergeDefault" value="false" />
+      </ProjectWorkspaceSettings>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="1dfyHsfFP2Axcsb32ulAkmuZdHp" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="375c0f9a-f539-42e2-b5f5-d9dbec7839ba" name="Default Changelist" comment="" />
+      <created>1592830357960</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592830357960</updated>
+      <workItem from="1592830360892" duration="190000" />
+      <workItem from="1592830553087" duration="198000" />
+      <workItem from="1592830854512" duration="368000" />
+      <workItem from="1596613588100" duration="78000" />
+      <workItem from="1596613676009" duration="1668000" />
+      <workItem from="1596617627236" duration="3291000" />
+      <workItem from="1653899894642" duration="23000" />
+      <workItem from="1677851578103" duration="2111000" />
+      <workItem from="1677853733268" duration="37000" />
+      <workItem from="1705806987342" duration="612000" />
+      <workItem from="1706030571995" duration="52000" />
+      <workItem from="1740584180379" duration="1692000" />
+      <workItem from="1751121269619" duration="671000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
