@@ -1,3 +1,5 @@
+[![Deploy](https://githubsfdeploy.herokuapp.com/assets/deploy.png)](https://github.com/vatvalusha/sf-core-utils)
+
 # DML Result Strategy Library
 
 A comprehensive Salesforce Apex library that provides standardized DML operation handling with consistent error reporting and result processing. This library implements the Strategy pattern to handle different types of DML results uniformly.
