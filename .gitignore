@@ -9,3 +9,5 @@ node_modules/
 **/tsconfig*.json
 **/*.tsbuildinfo
 */workspace.xml
+.idea/workspace.xml
+.idea/ChatHistory_schema_v2.xml
