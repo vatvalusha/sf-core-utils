@@ -198,10 +198,10 @@ Standardized wrapper for DML operation results containing:
 #### Update Operations
 
 ```apex
-// Update multiple accounts
-List<Account> accounts = [SELECT Id, Name, Industry FROM Account LIMIT 100];
+// Insert multiple accounts
+List<Account> accounts = [SELECT Id, Name FROM Account];
 for (Account acc : accounts) {
-    acc.Industry = 'Technology';
+    acc.Name = 'Updated ' + acc.Name;
 }
 
 List<DmlResult> results = DmlResultService.bulkUpdate(accounts);
