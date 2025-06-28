@@ -10,9 +10,145 @@ A comprehensive Salesforce Apex library that provides standardized DML operation
 - **Consistent Error Handling**: Converts all DML errors into a uniform format  
 - **Strategy Pattern Implementation**: Extensible architecture for processing different DML result types  
 - **Lightning Component Ready**: Simplified error structures suitable for Lightning component integration  
-- **Bulk Operation Support**: Efficient handling of large data sets with proper error reporting  
+- **Bulk Operation Support**: Efficient handling of large data sets with proper error reporting
 
 ---
+
+### Class Diagram
+
+```mermaid
+classDiagram
+    class DmlResultService {
+        -Map~String, IDmlResultStrategy~ RESULT_PROCESSORS
+        +bulkUpdate(List~SObject~) List~DmlResult~
+        +bulkUpsert(List~SObject~) List~DmlResult~
+        +bulkDelete(List~SObject~) List~DmlResult~
+        +getGenericErrorResults(List~Object~) List~DmlResult~
+        -getClassName(Object) String
+    }
+    
+    class IDmlResultStrategy {
+        <<interface>>
+        +process(List~Object~) List~DmlResult~
+    }
+    
+    class SaveResultStrategy {
+        +process(List~Object~) List~DmlResult~
+        -getSaveResults(List~Database.SaveResult~) List~DmlResult~
+    }
+    
+    class UpsertResultStrategy {
+        +process(List~Object~) List~DmlResult~
+        -getUpsertResults(List~Database.UpsertResult~) List~DmlResult~
+    }
+    
+    class DeleteResultStrategy {
+        +process(List~Object~) List~DmlResult~
+        -getDeleteResults(List~Database.DeleteResult~) List~DmlResult~
+    }
+    
+    class DmlResult {
+        +Id recordId
+        +Boolean success
+        +List~DmlError~ errors
+        +DmlResult()
+        +DmlResult(Database.SaveResult)
+        +DmlResult(Database.UpsertResult)
+        +DmlResult(Database.DeleteResult)
+        -processDatabaseErrors(List~Database.Error~) List~DmlError~
+    }
+    
+    class DmlError {
+        +List~String~ fields
+        +String message
+        +String statusCode
+        +DmlError(Database.Error)
+    }
+
+    DmlResultService --> IDmlResultStrategy
+    IDmlResultStrategy <|.. SaveResultStrategy
+    IDmlResultStrategy <|.. UpsertResultStrategy
+    IDmlResultStrategy <|.. DeleteResultStrategy
+    DmlResultService --> DmlResult
+    DmlResult --> DmlError
+```
+
+### Process Flow Diagram
+
+```mermaid
+flowchart TD
+    A[Client Code] --> B{DML Operation Type}
+    
+    B -->|Update| C[DmlResultService.bulkUpdate]
+    B -->|Upsert| D[DmlResultService.bulkUpsert]
+    B -->|Delete| E[DmlResultService.bulkDelete]
+    B -->|Generic Processing| F[DmlResultService.getGenericErrorResults]
+    
+    C --> G[Database.update]
+    D --> H[Database.upsert]
+    E --> I[Database.delete]
+    
+    G --> J[Database.SaveResult]
+    H --> K[Database.UpsertResult]
+    I --> L[Database.DeleteResult]
+    
+    J --> M[DmlResult Constructor]
+    K --> M
+    L --> M
+    
+    F --> N{Identify Result Type}
+    N -->|SaveResult| O[SaveResultStrategy]
+    N -->|UpsertResult| P[UpsertResultStrategy]
+    N -->|DeleteResult| Q[DeleteResultStrategy]
+    
+    O --> R[Process Results]
+    P --> R
+    Q --> R
+    
+    M --> S[DmlResult Objects]
+    R --> S
+    
+    S --> T[Client Processing]
+    
+    style A fill:#e1f5fe
+    style S fill:#c8e6c9
+    style T fill:#fff3e0
+```
+
+### Error Handling Flow
+
+```mermaid
+flowchart TD
+    A[DML Operation] --> B{Operation Success?}
+    
+    B -->|Yes| C[Create Success DmlResult]
+    B -->|No| D[Extract Database.Error]
+    
+    D --> E[Create DmlError Objects]
+    E --> F[Set Error Details]
+    F --> G[fields: List&lt;String&gt;]
+    F --> H[message: String]
+    F --> I[statusCode: String]
+    
+    G --> J[Create Failed DmlResult]
+    H --> J
+    I --> J
+    
+    C --> K[Return to Client]
+    J --> K
+    
+    K --> L{Client Error Handling}
+    L -->|Log Errors| M[System.debug]
+    L -->|UI Display| N[Lightning Component]
+    L -->|Email Report| O[Email Service]
+    
+    style A fill:#ffebee
+    style D fill:#fff3e0
+    style J fill:#ffcdd2
+    style C fill:#c8e6c9
+```
+---
+
 ## 🧱 Core Components
 
 ### `DmlResultService`
