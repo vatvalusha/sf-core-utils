@@ -335,6 +335,7 @@ private class DmlResultServiceIntegrationTest {
     }
 }
 ```
+
 ## Best Practices
 
 1. **Always Check Success Status**: Always verify `result.success` before assuming operation completed successfully
@@ -355,6 +356,8 @@ private class DmlResultServiceIntegrationTest {
 ## Contributing
 
 This library follows Salesforce best practices and is designed to be extended. To add support for new DML result types,
-implement the `IDmlResultStrategy` interface and register it in the `DmlResultService.RESULT_PROCESSORS` map.
+Implement the `IDmlResultStrategy` interface and register it in the `DmlResultService.RESULT_PROCESSORS` map.
+
 ---
+
 
