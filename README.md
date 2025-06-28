@@ -1,10 +1,19 @@
+
 # DML Result Strategy Library
 
-A comprehensive Salesforce Apex library that provides standardized DML operation handling with consistent error
-reporting and result processing. This library implements the Strategy pattern to handle different types of DML results
-uniformly.
+A comprehensive Salesforce Apex library that provides standardized DML operation handling with consistent error reporting and result processing. This library implements the Strategy pattern to handle different types of DML results uniformly.
 
-## Architecture Overview
+---
+
+## Features
+
+- **Unified DML Operations**: Standardized interface for bulk update, upsert, and delete operations  
+- **Consistent Error Handling**: Converts all DML errors into a uniform format  
+- **Strategy Pattern Implementation**: Extensible architecture for processing different DML result types  
+- **Lightning Component Ready**: Simplified error structures suitable for Lightning component integration  
+- **Bulk Operation Support**: Efficient handling of large data sets with proper error reporting
+
+---
 
 ### Class Diagram
 
@@ -139,48 +148,49 @@ flowchart TD
     style J fill:#ffcdd2
     style C fill:#c8e6c9
 ```
+---
 
-## Features
+## 🧱 Core Components
 
-- **Unified DML Operations**: Standardized interface for bulk update, upsert, and delete operations
-- **Consistent Error Handling**: Converts all DML errors into a uniform format
-- **Strategy Pattern Implementation**: Extensible architecture for processing different DML result types
-- **Lightning Component Ready**: Simplified error structures suitable for Lightning component integration
-- **Bulk Operation Support**: Efficient handling of large data sets with proper error reporting
-
-## Core Components
-
-### DmlResultService
+### `DmlResultService`
 
 Main service class providing static methods for DML operations and result processing:
 
-- `bulkUpdate(List<SObject>)` - Performs bulk update operations
-- `bulkUpsert(List<SObject>)` - Performs bulk upsert operations
-- `bulkDelete(List<SObject>)` - Performs bulk delete operations
-- `getGenericErrorResults(List<Object>)` - Converts any DML results to standardized format
+- `bulkUpdate(List<SObject>)` – Performs bulk update operations  
+- `bulkUpsert(List<SObject>)` – Performs bulk upsert operations  
+- `bulkDelete(List<SObject>)` – Performs bulk delete operations  
+- `getGenericErrorResults(List<Object>)` – Converts any DML results to a standardized format  
 
-### DmlResult
+---
+
+### `DmlResult`
 
 Standardized wrapper for DML operation results containing:
 
-- `recordId` - ID of the processed record
-- `success` - Operation success indicator
-- `errors` - List of standardized error objects
+- `recordId` – ID of the processed record  
+- `success` – Operation success indicator  
+- `errors` – List of standardized error objects  
 
-### Strategy Pattern Implementation
+---
 
-- **IDmlResultStrategy** - Interface defining result processing contract
-- **SaveResultStrategy** - Handles Database.SaveResult objects
-- **UpsertResultStrategy** - Handles Database.UpsertResult objects
-- **DeleteResultStrategy** - Handles Database.DeleteResult objects
+## 🧩 Strategy Pattern Implementation
 
-### DmlError
+- `IDmlResultStrategy` – Interface defining result processing contract  
+- `SaveResultStrategy` – Handles `Database.SaveResult` objects  
+- `UpsertResultStrategy` – Handles `Database.UpsertResult` objects  
+- `DeleteResultStrategy` – Handles `Database.DeleteResult` objects  
 
-Error object with simplified structure for:
+---
 
-- `fields` - Affected field names
-- `message` - Human-readable error message
-- `statusCode` - Error status code
+## 🛠 Error Handling
+
+`DmlError` class provides a simplified error structure:
+
+- `fields` – Affected field names  
+- `message` – Human-readable error message  
+- `statusCode` – Error status code
+
+---
 
 ## Usage Examples
 
@@ -189,10 +199,10 @@ Error object with simplified structure for:
 #### Update Operations
 
 ```apex
-// Update multiple accounts
-List<Account> accounts = [SELECT Id, Name, Industry FROM Account LIMIT 100];
+// Insert multiple accounts
+List<Account> accounts = [SELECT Id, Name FROM Account];
 for (Account acc : accounts) {
-    acc.Industry = 'Technology';
+    acc.Name = 'Updated ' + acc.Name;
 }
 
 List<DmlResult> results = DmlResultService.bulkUpdate(accounts);
@@ -397,7 +407,7 @@ public class AccountTriggerHandler {
         List<Contact> contactsToUpdate = new List<Contact>();
         
         // Prepare related contacts for update
-        for (Account acc : newAccounts) {
+        for (Account acc: newAccounts) {
             if (acc.Industry != oldMap.get(acc.Id).Industry) {
                 contactsToUpdate.addAll([SELECT Id, Department FROM Contact WHERE AccountId = :acc.Id]);
             }
@@ -483,4 +493,8 @@ private class DmlResultServiceIntegrationTest {
 ## Contributing
 
 This library follows Salesforce best practices and is designed to be extended. To add support for new DML result types,
-implement the `IDmlResultStrategy` interface and register it in the `DmlResultService.RESULT_PROCESSORS` map.
+Implement the `IDmlResultStrategy` interface and register it in the `DmlResultService.RESULT_PROCESSORS` map.
+
+---
+
+
