@@ -16,16 +16,20 @@ A comprehensive Salesforce Apex library that provides standardized DML operation
 
 ## Usage Examples
 
+**Bulk update with standardized results:**
 ```apex
-// Bulk update with standardized results
 List<Account> accounts = [SELECT Id, Name FROM Account LIMIT 10];
 List<DmlResult> updateResults = DmlResultService.bulkUpdate(accounts);
+```
 
-// Process mixed DML results uniformly
+**Process mixed DML results uniformly:**
+```apex
 List<Database.SaveResult> saveResults = Database.insert(records, false);
 List<DmlResult> standardizedResults = DmlResultService.getGenericErrorResults(saveResults);
+```
 
-// Error handling
+**Error handling:**
+```apex
 for (DmlResult result : standardizedResults) {
     if (!result.success) {
         for (DmlError error : result.errors) {
@@ -34,5 +38,45 @@ for (DmlResult result : standardizedResults) {
     }
 }
 ```
+---
 
+## 🧱 Core Components
+
+### `DmlResultService`
+
+Main service class providing static methods for DML operations and result processing:
+
+- `bulkUpdate(List<SObject>)` – Performs bulk update operations  
+- `bulkUpsert(List<SObject>)` – Performs bulk upsert operations  
+- `bulkDelete(List<SObject>)` – Performs bulk delete operations  
+- `getGenericErrorResults(List<Object>)` – Converts any DML results to a standardized format  
+
+---
+
+### `DmlResult`
+
+Standardized wrapper for DML operation results containing:
+
+- `recordId` – ID of the processed record  
+- `success` – Operation success indicator  
+- `errors` – List of standardized error objects  
+
+---
+
+## 🧩 Strategy Pattern Implementation
+
+- `IDmlResultStrategy` – Interface defining result processing contract  
+- `SaveResultStrategy` – Handles `Database.SaveResult` objects  
+- `UpsertResultStrategy` – Handles `Database.UpsertResult` objects  
+- `DeleteResultStrategy` – Handles `Database.DeleteResult` objects  
+
+---
+
+## 🛠 Error Handling
+
+`DmlError` class provides a simplified error structure:
+
+- `fields` – Affected field names  
+- `message` – Human-readable error message  
+- `statusCode` – Error status code  
 
