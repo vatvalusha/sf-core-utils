@@ -1,0 +1,103 @@
+/* Custom styles for the Retention Rule Editor component */
+
+.slds-form_stacked .slds-form-element__label {
+    font-weight: 600;
+}
+
+.slds-notify {
+    margin-bottom: 1rem;
+}
+
+.retention-section {
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.retention-section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #080707;
+}
+
+.required-indicator {
+    color: #c23934;
+    margin-left: 0.125rem;
+}
+
+.form-row {
+    margin-bottom: 1rem;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.checkbox-item {
+    flex: 0 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slds-col.slds-large-size_1-of-2,
+    .slds-col.slds-large-size_1-of-3,
+    .slds-col.slds-large-size_1-of-4 {
+        width: 100%;
+    }
+    
+    .checkbox-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Data table customization */
+.retention-runs-table {
+    margin-top: 1rem;
+}
+
+.retention-runs-table .slds-table {
+    font-size: 0.875rem;
+}
+
+/* Loading state */
+.loading-container {
+    position: relative;
+    min-height: 200px;
+}
+
+/* Success/Error message styling */
+.message-container {
+    margin-bottom: 1rem;
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+    .button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .button-group lightning-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Form field focus enhancement */
+lightning-input:focus-within,
+lightning-combobox:focus-within,
+lightning-textarea:focus-within {
+    box-shadow: 0 0 3px rgba(21, 137, 238, 0.5);
+}

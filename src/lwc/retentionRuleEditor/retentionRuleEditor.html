@@ -1,0 +1,236 @@
+<template>
+    <lightning-card title="Retention Rule Editor" icon-name="custom:custom63">
+        <div class="slds-p-horizontal_medium">
+            <!-- Error Messages -->
+            <template if:true={errorMessage}>
+                <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+                    <span class="slds-assistive-text">Error</span>
+                    <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Error">
+                        <lightning-icon icon-name="utility:error" alternative-text="Error" size="x-small"
+                                        variant="inverse"></lightning-icon>
+                    </span>
+                    <h2>{errorMessage}</h2>
+                </div>
+            </template>
+
+            <!-- Success Messages -->
+            <template if:true={successMessage}>
+                <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_success" role="alert">
+                    <span class="slds-assistive-text">Success</span>
+                    <span class="slds-icon_container slds-icon-utility-success slds-m-right_x-small" title="Success">
+                        <lightning-icon icon-name="utility:success" alternative-text="Success" size="x-small"
+                                        variant="inverse"></lightning-icon>
+                    </span>
+                    <h2>{successMessage}</h2>
+                </div>
+            </template>
+
+            <!-- Loading Spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </template>
+
+            <!-- Retention Rule Form -->
+            <div class="slds-form slds-form_stacked">
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <!-- Row 1: Basic Information -->
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <lightning-input
+                                label="Retention Name"
+                                value={retentionRule.Name}
+                                onchange={handleInputChange}
+                                data-field="Name"
+                                required>
+                        </lightning-input>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <lightning-combobox
+                                label="Target Object"
+                                value={retentionRule.VAL1__TargetObject__c}
+                                options={targetObjectOptions}
+                                onchange={handleInputChange}
+                                data-field="VAL1__TargetObject__c"
+                                placeholder="Select an object..."
+                                required>
+                        </lightning-combobox>
+                    </div>
+
+                    <!-- Row 2: Retention Settings -->
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3">
+                        <lightning-input
+                                label="Retention Age"
+                                type="number"
+                                value={retentionRule.VAL1__RetentionAge__c}
+                                onchange={handleInputChange}
+                                data-field="VAL1__RetentionAge__c"
+                                min="1"
+                                required>
+                        </lightning-input>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3">
+                        <lightning-combobox
+                                label="Retention Unit"
+                                value={retentionRule.VAL1__RetentionUnit__c}
+                                options={retentionUnitOptions}
+                                onchange={handleInputChange}
+                                data-field="VAL1__RetentionUnit__c"
+                                required>
+                        </lightning-combobox>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3">
+                        <lightning-input
+                                label="Date Field API"
+                                value={retentionRule.VAL1__DateFieldAPI__c}
+                                onchange={handleInputChange}
+                                data-field="VAL1__DateFieldAPI__c"
+                                placeholder="CreatedDate">
+                        </lightning-input>
+                    </div>
+
+                    <!-- Row 3: Checkboxes -->
+                    <div class="slds-col slds-size_1-of-1">
+                        <div class="slds-grid slds-wrap slds-gutters">
+                            <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-4">
+                                <lightning-input
+                                        type="checkbox"
+                                        label="Active"
+                                        checked={retentionRule.VAL1__Active__c}
+                                        onchange={handleInputChange}
+                                        data-field="VAL1__Active__c">
+                                </lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-4">
+                                <lightning-input
+                                        type="checkbox"
+                                        label="Simulate"
+                                        checked={retentionRule.VAL1__Simulate__c}
+                                        onchange={handleInputChange}
+                                        data-field="VAL1__Simulate__c">
+                                </lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-4">
+                                <lightning-input
+                                        type="checkbox"
+                                        label="Hard Delete"
+                                        checked={retentionRule.VAL1__HardDelete__c}
+                                        onchange={handleInputChange}
+                                        data-field="VAL1__HardDelete__c">
+                                </lightning-input>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Execution Settings -->
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <lightning-combobox
+                                label="Run Method"
+                                value={retentionRule.VAL1__RunMethod__c}
+                                options={runMethodOptions}
+                                onchange={handleInputChange}
+                                data-field="VAL1__RunMethod__c">
+                        </lightning-combobox>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <lightning-combobox
+                                label="Batch Frequency"
+                                value={retentionRule.VAL1__BatchFrequency__c}
+                                options={batchFrequencyOptions}
+                                onchange={handleInputChange}
+                                data-field="VAL1__BatchFrequency__c">
+                        </lightning-combobox>
+                    </div>
+
+                    <!-- Row 5: Advanced Settings -->
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <lightning-input
+                                label="Batch Chunk Size"
+                                type="number"
+                                value={retentionRule.VAL1__BatchChunkSize__c}
+                                onchange={handleInputChange}
+                                data-field="VAL1__BatchChunkSize__c"
+                                min="1"
+                                max="2000">
+                        </lightning-input>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <lightning-input
+                                label="Record Limit per Run"
+                                type="number"
+                                value={retentionRule.VAL1__RecordLimitPerRun__c}
+                                onchange={handleInputChange}
+                                data-field="VAL1__RecordLimitPerRun__c"
+                                min="1">
+                        </lightning-input>
+                    </div>
+
+                    <!-- Row 6: Filter Condition -->
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-textarea
+                                label="Filter Condition"
+                                value={retentionRule.VAL1__FilterCondition__c}
+                                onchange={handleInputChange}
+                                data-field="VAL1__FilterCondition__c"
+                                placeholder="e.g., Status = 'Inactive' AND Type = 'Archive'"
+                                rows="3">
+                        </lightning-textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Buttons -->
+        <div slot="footer">
+            <div class="slds-grid slds-grid_align-end slds-gutters">
+                <div class="slds-col slds-no-flex">
+                    <lightning-button
+                            variant="neutral"
+                            label="Cancel"
+                            onclick={handleCancel}>
+                    </lightning-button>
+                </div>
+                <div class="slds-col slds-no-flex">
+                    <lightning-button
+                            variant="brand"
+                            label="Save & New"
+                            onclick={handleSaveAndNew}
+                            disabled={isLoading}>
+                    </lightning-button>
+                </div>
+                <div class="slds-col slds-no-flex">
+                    <lightning-button
+                            variant="brand"
+                            label="Save"
+                            onclick={handleSave}
+                            disabled={isLoading}>
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+
+    <!-- Retention Runs History -->
+    <template if:true={showHistory}>
+        <lightning-card title="Retention Run History" icon-name="standard:logging" class="slds-m-top_medium">
+            <div class="slds-p-horizontal_medium">
+                <template if:true={retentionRuns.length}>
+                    <lightning-datatable
+                            key-field="Id"
+                            data={retentionRuns}
+                            columns={runColumns}
+                            hide-checkbox-column="true">
+                    </lightning-datatable>
+                </template>
+                <template if:false={retentionRuns.length}>
+                    <div class="slds-text-align_center slds-p-vertical_medium">
+                        <p>No retention runs found for this rule.</p>
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </template>
+</template>

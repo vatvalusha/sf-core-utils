@@ -14,6 +14,8 @@ public with sharing class DmlError {
     public String message;
     public String statusCode;
 
+    public DmlError(){}
+
     /**
      * @description Constructor that transforms a Database.Error object into DmlError
      * @param dbError The Salesforce Database.Error object containing error details
