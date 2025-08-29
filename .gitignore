@@ -10,3 +10,4 @@ node_modules/
 **/tsconfig*.json
 **/*.tsbuildinfo
 */workspace.xml
+CLAUDE.md
