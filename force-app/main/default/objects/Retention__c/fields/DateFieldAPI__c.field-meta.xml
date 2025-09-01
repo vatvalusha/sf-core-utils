@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DateFieldAPI__c</fullName>
+    <defaultValue>&quot;CreatedDate&quot;</defaultValue>
+    <description>API name of the date field to use for retention calculations</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the API name of the date/datetime field to use for retention calculations. Defaults to CreatedDate if not specified.</inlineHelpText>
+    <label>Date Field API</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

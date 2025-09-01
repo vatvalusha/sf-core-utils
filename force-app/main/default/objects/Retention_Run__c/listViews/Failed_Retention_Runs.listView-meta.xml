@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Failed_Retention_Runs</fullName>
+    <columns>NAME</columns>
+    <columns>Retention__c</columns>
+    <columns>Status__c</columns>
+    <columns>Found__c</columns>
+    <columns>Deleted__c</columns>
+    <columns>Errors__c</columns>
+    <columns>StartedAt__c</columns>
+    <columns>FinishedAt__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Failed</value>
+    </filters>
+    <label>Failed Retention Runs</label>
+</ListView>

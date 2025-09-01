@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HardDelete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When checked, records will be permanently deleted (not sent to recycle bin)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check to permanently delete records (bypass recycle bin). Use with caution!</inlineHelpText>
+    <label>Hard Delete</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

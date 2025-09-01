@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TargetObject__c</fullName>
+    <description>API name of the sObject to apply retention rules to</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the API name of the sObject (e.g., Account, Contact, Custom_Object__c)</inlineHelpText>
+    <label>Target Object</label>
+    <length>255</length>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

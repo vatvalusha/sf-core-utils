@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FinishedAt__c</fullName>
+    <description>Date and time when the retention run completed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Timestamp when the retention run execution finished</inlineHelpText>
+    <label>Finished At</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

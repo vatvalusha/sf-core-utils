@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SampleIds__c</fullName>
+    <description>Sample record IDs that were processed (comma-separated list of up to 10 IDs)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Sample record IDs from this retention run for auditing purposes</inlineHelpText>
+    <label>Sample IDs</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>
