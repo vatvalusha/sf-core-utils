@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Batch_Size_Reasonable_Limit</fullName>
+    <active>true</active>
+    <description>Ensures batch chunk size is within reasonable limits (1-2000)</description>
+    <errorConditionFormula>AND(
+  NOT(ISBLANK(BatchChunkSize__c)),
+  OR(
+    BatchChunkSize__c &lt; 1,
+    BatchChunkSize__c &gt; 2000
+  )
+)</errorConditionFormula>
+    <errorDisplayField>BatchChunkSize__c</errorDisplayField>
+    <errorMessage>Batch chunk size must be between 1 and 2000</errorMessage>
+</ValidationRule>

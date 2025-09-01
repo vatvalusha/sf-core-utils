@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retention_Age_Must_Be_Positive</fullName>
+    <active>true</active>
+    <description>Ensures that retention age is always a positive number</description>
+    <errorConditionFormula>RetentionAge__c &lt;= 0</errorConditionFormula>
+    <errorDisplayField>RetentionAge__c</errorDisplayField>
+    <errorMessage>Retention age must be greater than zero</errorMessage>
+</ValidationRule>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RunMethod__c</fullName>
+    <description>Determines how the retention rule is executed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select how this retention rule should be executed</inlineHelpText>
+    <label>Run Method</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Scheduled</fullName>
+                <default>true</default>
+                <label>Scheduled</label>
+            </value>
+            <value>
+                <fullName>OnDemand</fullName>
+                <default>false</default>
+                <label>On Demand</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
