@@ -16,25 +16,56 @@ This is a Salesforce Apex library project focused on standardized DML operations
 
 ### Key Components
 
-1. **DML Result Strategy System** (`src/classes/Utilities/DMLResultStrategy/`)
+1. **DML Result Strategy System** (`force-app/main/default/classes/Utilities/DML/`)
    - `DmlResultService.cls`: Main service providing bulk operations (update, upsert, delete)
    - `IDmlResultStrategy.cls`: Interface for processing different DML result types
    - Strategy implementations: `SaveResultStrategy`, `UpsertResultStrategy`, `DeleteResultStrategy`
    - `DmlResult.cls` and `DmlError.cls`: Standardized result wrappers
 
-2. **Utility Classes** (`src/classes/`)
+2. **Utility Classes** (`force-app/main/default/classes/`)
    - `PicklistUtility.cls`: Handles Salesforce picklist dependencies and base64 encoding
    - `Constants.cls`: Application constants
 
-3. **Test Classes** (`src/classes/Tests/`)
-   - Follow Salesforce testing patterns with `@IsTest` annotation
+3. **Retention Framework** (`force-app/main/default/classes/Utilities/Retention/`)
+   - `RetentionBatch.cls`: Configurable batch job for data retention
+   - `RetentionScheduler.cls`: Automated scheduling system
+   - `RetentionStrategy.cls`: Interface for custom retention logic
+   - `DefaultRetentionStrategy.cls`: Standard retention implementation
+   - `RetentionRuleEditorController.cls`: Lightning component backend
+
+4. **Lightning Web Components** (`force-app/main/default/lwc/`)
+   - `retentionRuleEditor`: Full-featured UI for retention rule management
+
+5. **Custom Objects** (`force-app/main/default/objects/`)
+   - `Retention__c`: Retention rule configuration
+   - `Retention_Run__c`: Retention execution logging
 
 ## Development Environment
 
 This project uses **Illuminated Cloud** as the primary development environment:
-- TypeScript configuration managed by Illuminated Cloud (`src/lwc/tsconfig.json`)
+- TypeScript configuration managed by Illuminated Cloud (`force-app/main/default/lwc/tsconfig.json`)
 - Offline symbol tables stored in `IlluminatedCloud/` directory
-- Package metadata defined in `src/package.xml` (Salesforce API version 48.0)
+- Package metadata defined in `sfdx-project.json` (Salesforce API version 59.0)
+- Uses Salesforce CLI for deployments and org management
+
+## Common Commands
+
+### Testing
+- `npm run test` - Run all LWC unit tests
+- `npm run test:unit:watch` - Run tests in watch mode
+- `npm run test:unit:coverage` - Run tests with coverage report
+- `npm run test:unit:debug` - Run tests in debug mode
+
+### Code Quality
+- `npm run lint` - Lint Aura and LWC JavaScript files
+- `npm run prettier` - Format all code files
+- `npm run prettier:verify` - Check code formatting
+
+### Salesforce CLI Commands
+- `sf org open` - Open the default org
+- `sf project deploy start` - Deploy source to org
+- `sf project retrieve start` - Retrieve source from org
+- `sf apex run --file scripts/apex/hello.apex` - Run anonymous Apex
 
 ## Code Conventions
 
