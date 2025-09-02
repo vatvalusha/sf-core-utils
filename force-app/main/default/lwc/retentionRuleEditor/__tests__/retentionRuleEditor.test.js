@@ -298,9 +298,6 @@ describe("c-retention-rule-editor", () => {
       const allInputs = element.shadowRoot.querySelectorAll("lightning-input");
       expect(allInputs.length).toBeGreaterThan(0);
 
-      // Test that we can interact with inputs
-      expect(allInputs.length).toBeGreaterThan(0);
-
       // Use first available input for interaction test
       const testInput = allInputs[0];
       expect(testInput).toBeTruthy();
@@ -324,9 +321,6 @@ describe("c-retention-rule-editor", () => {
       // Test button interaction - use generic selector as specific labels may not be accessible
       const allButtons =
         element.shadowRoot.querySelectorAll("lightning-button");
-      expect(allButtons.length).toBeGreaterThan(0);
-
-      // Test that we can interact with buttons
       expect(allButtons.length).toBeGreaterThan(0);
 
       // Use first available button for interaction test
