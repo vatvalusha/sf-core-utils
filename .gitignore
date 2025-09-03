@@ -12,3 +12,5 @@ node_modules/
 */workspace.xml
 CLAUDE.md
 **/.*
+# MCP configuration files with tokens
+.mcp.json

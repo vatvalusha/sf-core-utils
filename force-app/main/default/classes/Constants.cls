@@ -37,7 +37,7 @@ public with sharing class Constants {
     /**
      * @description Retention Run Status values
      */
-    public static final String RETENTION_STATUS_STARTED = 'Started';
+    public static final String RETENTION_STATUS_STARTED = 'In Progress';
     public static final String RETENTION_STATUS_COMPLETED = 'Completed';
     public static final String RETENTION_STATUS_FAILED = 'Failed';
     
